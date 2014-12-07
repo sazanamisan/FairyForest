@@ -14,7 +14,7 @@ public class NewBehaviourScript : MonoBehaviour {
 		FingerCount = frame.Fingers.Count;
 		
 	}
-	
+
 	
     
 
@@ -37,10 +37,10 @@ public class NewBehaviourScript : MonoBehaviour {
 
 
 		float firsthandX = firstHand.PalmPosition.x + 600;
-		float firsthandY = firstHand.PalmPosition.y + 100;
+		float firsthandY = -firstHand.PalmPosition.y + 600;
 		
 		float secondhandX = secondHand.PalmPosition.x + 600;
-		float secondhandY = secondHand.PalmPosition.y + 100;
+		float secondhandY = -secondHand.PalmPosition.y + 600;
 		
 		
 		
@@ -56,14 +56,6 @@ public class NewBehaviourScript : MonoBehaviour {
 		                           TwoPlayercrosshairImage.width,
 		                           TwoPlayercrosshairImage.height), TwoPlayercrosshairImage);		
 
-
-	 /*else {
-				Vector2 mousePos = Event.current.mousePosition;
-				GUI.DrawTexture (new Rect (mousePos.x - (crosshairImage.width / 2),
-                          mousePos.y - (crosshairImage.height / 2),
-                          crosshairImage.width,
-                          crosshairImage.height), crosshairImage);
-			}*/
 			}
 
 }

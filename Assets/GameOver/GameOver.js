@@ -2,13 +2,13 @@
 
 function OnGUI()
 {
-	if (GUI.Button(Rect(250, 280, 200, 100), "Retry"))
+	if (GUI.Button(Rect(250, 380, 200, 100), "Retry"))
 	{
-		Application.LoadLevel("Stage01");
+		Application.LoadLevel("FairyForest");
 	}
-    if (GUI.Button(Rect(450, 280, 200, 100), "StageSelect"))
+    if (GUI.Button(Rect(650, 380, 200, 100), "Go To Title"))
 	{
-		Application.LoadLevel("StageSelect");
+		Application.LoadLevel("Title");
 	}
     
 }
