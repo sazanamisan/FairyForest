@@ -1,13 +1,17 @@
-﻿#pragma strict
+﻿using UnityEngine;
+using System.Collections;
 
-public var fire : GameObject;
-public var ice : GameObject;
-public var sander : GameObject;
+public class hit : MonoBehaviour {
 
-function Update () {
+
+public GameObject fire;
+public GameObject ice;
+public GameObject sander;
+
+void  Update (){
 	
     // shot スクリプト内の targetGameObject がこの gameObject だったら消す
-    if (this.gameObject == magic.targetGameObject) {
+    if (this.gameObject == PlayerAttack.targetGameObject) {
     	if ( guiText.text == "火") {
     	Instantiate(fire, transform.position, transform.rotation);
         Destroy(gameObject);
@@ -24,5 +28,6 @@ function Update () {
         Destroy(gameObject);
         Score.score +=1;
         }
+}
 }
 }

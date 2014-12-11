@@ -27,9 +27,12 @@ public class ElementStatus : MonoBehaviour {
 		else if ( FingerCount >= 2) {
 			guiText.text = "氷";
 			}
-		else {
-		guiText.text = "雷";
+		else if ( FingerCount ==1) {
+			guiText.text = "雷";
 			}
+		}
+		if(FingerCount == 0 ) {
+		guiText.text = "無";
 		}
 	}
 }

@@ -5,10 +5,11 @@ private var center : Vector3;
 var FireSE : AudioClip;
 var IceSE : AudioClip;
 var SanderSE : AudioClip;
- 
+
 function Start () {
     // 画面中央の座標を取得。
     center = Vector3(Screen.width/2, Screen.height/2, 0);
+    //firsthand = PlayerAttack.firsthand;
 }
  
 function Update () {
