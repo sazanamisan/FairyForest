@@ -7,23 +7,22 @@ public class WolfHit : MonoBehaviour {
 public GameObject fire;
 public GameObject ice;
 public GameObject sander;
-float s = 1.0f;
+float s = -0.01f;
 
 void  Update (){
-	
-    // shot スクリプト内の targetGameObject がこの gameObject だったら消す
-    if (this.gameObject == PlayerAttack.targetGameObject) {
-    	if ( guiText.text == "火") {
+    if (this.gameObject == OnePlayerAttack.targetGameObject | 
+    	TwoPlayerAttack.targetGameObject) {
+    	if ( OnePlayerAttack.FingerCount == 5 | TwoPlayerAttack.FingerCount == 5) {
     	Instantiate(fire, transform.position, transform.rotation);
         Destroy(gameObject);
         Score.score +=1;
         }
-        if ( guiText.text == "氷") {
+        if ( OnePlayerAttack.FingerCount == 2 | TwoPlayerAttack.FingerCount == 5) {
         Instantiate(ice, transform.position, transform.rotation);
         transform.Translate(Vector3.back * s);
         }
         
-        if ( guiText.text == "雷") {
+        if ( OnePlayerAttack.FingerCount == 1| TwoPlayerAttack.FingerCount == 5) {
         Instantiate(sander, transform.position, transform.rotation);
         Destroy(gameObject);
         Score.score +=1;
