@@ -8,6 +8,7 @@ public float time;
 private Vector3 deltaPos;
 private float elapsedTime;
 private bool bStartToEnd = true;
+
 void Start () {
 // StartPosをオブジェクトに初期位置に設定
 transform.position = StartPos;
@@ -17,6 +18,7 @@ elapsedTime = 0;
 }
 
 void Update () {
+if (Score.score > 99) {
 // 1秒当たりの移動量にTime.deltaTimeを掛けると1フレーム当たりの移動量となる
 // Time.deltaTimeは前回Updateが呼ばれてからの経過時間
 transform.position += deltaPos * Time.deltaTime;
@@ -45,6 +47,7 @@ transform.position = StartPos;
 bStartToEnd = !bStartToEnd;
 // 往路復路反転用経過時間クリア
 elapsedTime = 0;
+}
 }
 }
 }

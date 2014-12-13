@@ -61,7 +61,7 @@ public class OnePlayerAttack : MonoBehaviour {
 		Hand firstHand = hands[0];
 		HandCount = frame.Hands.Count;
 		
-		
+	
 		if (Attack == true ) {
 		if (FingerCount == 5) {
 			guiText.text = "1P" + "火";

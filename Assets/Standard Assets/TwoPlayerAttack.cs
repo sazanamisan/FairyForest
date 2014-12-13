@@ -31,6 +31,7 @@ public class TwoPlayerAttack : MonoBehaviour {
 		Frame frame = controller.Frame();
 		FingerCount = frame.Hands[1].Fingers.Count;
 		
+		
 	}
 	
 	void Ray(){
@@ -58,6 +59,8 @@ public class TwoPlayerAttack : MonoBehaviour {
 		HandList hands = frame.Hands;
 		Hand secondHand = hands[1];
 		HandCount = frame.Hands.Count;
+		
+		
 		
 		if (Attack == true ) {
 		if (FingerCount == 5) {
