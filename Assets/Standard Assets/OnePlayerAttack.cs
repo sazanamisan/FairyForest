@@ -25,10 +25,8 @@ public class OnePlayerAttack : MonoBehaviour {
 	
 	void Update() {
 	
-		// マウスカーソルを削除する
-    UnityEngine.Screen.showCursor = false;
     // マウスカーソルを画面内にロックする
-    UnityEngine.Screen.lockCursor = true;
+    //UnityEngine.Screen.lockCursor = true;
 	
 		Frame frame = controller.Frame();
 		FingerCount = frame.Hands[0].Fingers.Count;
@@ -64,32 +62,28 @@ public class OnePlayerAttack : MonoBehaviour {
 	
 		if (Attack == true ) {
 		if (FingerCount == 5) {
-			guiText.text = "1P" + "火";
 			Ray();
 			audio.PlayOneShot(FireSE);
 			Attack = false;
 			}
 		else if ( FingerCount == 2) {
-			guiText.text = "1P" + "氷";
 			Ray();
 			audio.PlayOneShot(IceSE);
 			Attack = false;
 			}
 		else if ( FingerCount ==1) {
-			guiText.text = "1P" + "雷";
 			Ray();
 			audio.PlayOneShot(SanderSE);
 			Attack = false;
 			}
 		}
 		if(FingerCount == 0 ) {
-		guiText.text = "1P" + "無";
 		Attack = true;
 		}
 
 
 		firsthand.x = firstHand.PalmPosition.x + 500;
-		firsthand.y = -firstHand.PalmPosition.y + 400;
+		firsthand.y = -firstHand.PalmPosition.y + 500;
 		
 		GUI.DrawTexture (new Rect (firsthand.x - (OnePlayercrosshairImage.width / 2),
 		                           firsthand.y + (OnePlayercrosshairImage.height / 2),

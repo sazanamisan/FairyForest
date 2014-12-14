@@ -23,10 +23,9 @@ public class TwoPlayerAttack : MonoBehaviour {
 	
 	void Update() {
 	
-		// マウスカーソルを削除する
-    UnityEngine.Screen.showCursor = false;
+
     // マウスカーソルを画面内にロックする
-    UnityEngine.Screen.lockCursor = true;
+    //UnityEngine.Screen.lockCursor = true;
 	
 		Frame frame = controller.Frame();
 		FingerCount = frame.Hands[1].Fingers.Count;
@@ -64,32 +63,28 @@ public class TwoPlayerAttack : MonoBehaviour {
 		
 		if (Attack == true ) {
 		if (FingerCount == 5) {
-			guiText.text = "2P" + "火";
 			Ray();
 			audio.PlayOneShot(FireSE);
 			Attack = false;
 			}
 		else if ( FingerCount == 2) {
-			guiText.text = "2P" + "氷";
 			Ray();
 			audio.PlayOneShot(IceSE);
 			Attack = false;
 			}
 		else if ( FingerCount ==1) {
-			guiText.text = "2P" + "雷";
 			Ray();
 			audio.PlayOneShot(SanderSE);
 			Attack = false;
 			}
 		}
 		if(FingerCount == 0 ) {
-		guiText.text = "2P" + "無";
 		Attack = true;
 		}
 
 
 		secondhand.x = secondHand.PalmPosition.x + 500;
-		secondhand.y = -secondHand.PalmPosition.y + 400;
+		secondhand.y = -secondHand.PalmPosition.y + 500;
 		                           
 		GUI.DrawTexture (new Rect (secondhand.x - (TwoPlayercrosshairImage.width / 2),
 		                           secondhand.y + (TwoPlayercrosshairImage.height / 2),

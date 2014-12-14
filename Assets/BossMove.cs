@@ -18,7 +18,7 @@ elapsedTime = 0;
 }
 
 void Update () {
-if (Score.score > 99) {
+if (Score.score > 39) {
 // 1秒当たりの移動量にTime.deltaTimeを掛けると1フレーム当たりの移動量となる
 // Time.deltaTimeは前回Updateが呼ばれてからの経過時間
 transform.position += deltaPos * Time.deltaTime;
